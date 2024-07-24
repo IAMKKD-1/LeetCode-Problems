@@ -1,11 +1,25 @@
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-        h = {}
-        for curridx in range(len(nums)):
-            diff = target - nums[curridx]
-            if diff in h:
-                return [h[diff], curridx]
+        d = {}
+        for i in range(len(nums)):
+            val = target - nums[i]
+            if val in d:
+                return [i, d[val]]
             else:
-                h[nums[curridx]] = curridx
+                d[nums[i]] = i
+        
 
-    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
