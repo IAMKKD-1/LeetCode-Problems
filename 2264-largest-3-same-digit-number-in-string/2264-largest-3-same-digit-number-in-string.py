@@ -11,5 +11,4 @@ class Solution:
 
         if check:
             return str(li)*3 
-        else:
-            return ""
+        return ""
