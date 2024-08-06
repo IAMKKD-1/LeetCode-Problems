@@ -2,7 +2,9 @@ class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
         if len(s) != len(t):
             return False
+
         sd = {}
+
         for i in s:
             if i in sd:
                 sd[i] += 1
