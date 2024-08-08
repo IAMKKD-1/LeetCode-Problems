@@ -6,4 +6,4 @@ class Solution:
         for i in paths:
             if i[1] not in data:
                 return i[1]
-                
+            
