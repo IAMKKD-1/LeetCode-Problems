@@ -6,10 +6,24 @@ class Solution:
                 d[i] += 1
             else:
                 d[i] = 1
-        li = sorted(d.items(), key=lambda x:x[1], reverse=True)
-        print(li)
+        li = [[] for i in range(len(nums)+1)]
+        for i in d:
+            li[d[i]].append(i)
         final = []
-        for i in range(k):
-            final.append(li[i][0])
-        print(final)
-        return final
+        for i in range(len(li)-1, -1, -1):
+            # if li[i]:
+            #     final.extend(li[i])
+            #     if len(final) == k:
+            #         return final
+            # OR
+            for i in li[i]:
+                final.append(i)
+                if len(final) == k:
+                    return final
+
+        # li = sorted(d.items(), key=lambda x:x[1], reverse=True)
+        
+        # final = []
+        # for i in range(k):
+        #     final.append(li[i][0])
+        # return final
