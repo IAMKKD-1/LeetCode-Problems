@@ -1,6 +1,6 @@
 class Solution:
     def letterCombinations(self, digits: str) -> List[str]:
-        a = {
+        mapping = {
             "2": "abc",
             "3": "def",
             "4": "ghi",
@@ -12,16 +12,16 @@ class Solution:
         }
 
         res = []
-        
+
         def backtrack(idx, final):
             if len(final) == len(digits):
                 res.append(final)
-                return 
+                return
 
-            for i in a[digits[idx]]:
-                backtrack(idx+1, final+i)
-        
+            for c in mapping[digits[idx]]:
+                backtrack(idx + 1, final + c)
+
         if digits:
-            backtrack(0, '')
+            backtrack(0, "")
+
         return res
-                
